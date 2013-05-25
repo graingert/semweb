@@ -1,8 +1,23 @@
 \documentclass{acm_proc_article-sp}
 
+\newcommand{\semtitle}{Reputation and Trust on the Semantic Web}
+\newcommand{\semkeywords}{Semantic Web, Linked Open Data, Reputation, Security}
+
+\newcommand\MYhyperrefoptions{
+       bookmarks=true,bookmarksnumbered=true,
+       pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+       colorlinks=true,linkcolor={black},citecolor={black},urlcolor={black},
+       pdftitle={\semtitle},%<!CHANGE!
+       pdfsubject={Semantic Web},%<!CHANGE!
+       pdfauthor={Thomas A. Grainger},%<!CHANGE!
+       pdfkeywords={\semkeywords}
+}%<^!CHANGE!
+
+\usepackage[\MYhyperrefoptions,pdftex]{hyperref}
+
 \begin{document}
 
-\title{Reputation and Trust on the Semantic Web}
+\title{\semtitle}
 \subtitle{}
 %
 % You need the command \numberofauthors to handle the 'placement
@@ -56,10 +71,7 @@ Thomas Grainger\\
 % author on the opening page (as the 'third row') but we ask,
 % for aesthetic reasons that you place these 'additional authors'
 % in the \additional authors block, viz.
-\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
-email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
-(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
-\date{30 July 1999}
+\date{\today}
 % Just remember to make sure that the TOTAL number of authors
 % is the number that will appear on the first page PLUS the
 % number that will appear in the \additionalauthors section.
@@ -76,7 +88,7 @@ TODO: Abstract
 
 %TODO: \terms{Theory}
 
-\keywords{Semantic Web, Linked Open Data, Reputation, Security} % NOT required for Proceedings
+\keywords{\semkeywords} % NOT required for Proceedings
 
 \section{Introduction}
 
