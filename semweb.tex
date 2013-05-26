@@ -105,24 +105,68 @@ Bootstrapped Trust, GlobalTrust, PersonalisedTrust, DirectTrust, PropagtedTrust,
 \cite{sherchan_trust_2010}
 
 
+What is an agent? Simple distributed objects, complex autonomous entities.
+\cite{kalfoglou_emergent_2004}
+
 The heart of SW
 Independent agents and providers of knowledge.
 Clearly also applies to services.
 
 The choice of trust strategy depends on the cost of failure (could lead to a catastrophe) and risks.  Risk/Cost/Benifit analysis.
 
-``The main point of a trust strategy is to provide a way to operate under uncertainty'': Operational costs, Opportunity cost, Deficiency cost, Service charges (academic ghetto).
+``The main point of a trust strategy is to provide a way to operate under uncertainty'': Operational costs, Oppohttps://www.bitcoinstore.com/information-technology/computer-systems/mobile-computers.htmlrtunity cost, Deficiency cost, Service charges (academic ghetto).
 
 Five basic strategies: Optimism, Pessimism, Centralized, Investigation, Transitivity.
 \cite{ohara_trust_2004}
 
-
+About users
 Confidence of the author is important
+Social network analysis
+``TRELLIS is an interactive tool that helps users annotate the
+rationale for their decisions, hypotheses, and opinions as they analyze information from various sources''\cite{gil_trusting_2002}
+
+Hyperlinked pages could be used as a trust network, SW is better because the SW allows concept relationships to be marked up, no need to use heuristics
+In social web, Erdos or Bacon number can be used to determine potential trust between friends.
+foaf:knows should not be used to give trust, as that's semantically incorrect
+defines a trust ontology with 9 levels of trust.
+
+N-Ary relationship pattern to add ``TrustsRe'' links, can trust a person ``trustsPerson'' on a particular subject ``trustsOnSubject''
+The calculated trust $t$ from node $i$ to node $n$ is given by the following function:
+\begin{equation}
+t_{is}=\frac{\sum_{j=0}^{n}{\begin{cases}
+(t_{js}*t_{ij}) & \text{ if } t_{ij} \geq t_{js} \\ 
+(t_{ij}^2) & \text{ if } x= t_{ij} < t_{js}
+\end{cases}}}{\sum_{j=0}^{n}{t_{ij}}}
+\end{equation}
+where $i$ has $n$ neighbors with paths to $s$.
+
+centralized web service to maintain trust data
+A centralized repository that uses transitive algorithms.
+TrustMail queries web service 
 \cite{golbeck_trust_2003}
+
+A concrete ontology for trust, with the same intention as discussed in the paper.
+\cite{jennifer_golbeck_trust_2013}
+
+
+``The degree to which an agent considers an assertion to be true for a given context. While the term ``trust'' is often used to denote a very high degree of confidence, there is an associated risk of the assertions being wrong.''
+
+Public Key Infrastructure PKI using certificate hierarchy.
+Needs a chain of signing to the root CA.
+
+Web of Trust popularized by PGP, similar to Bacon numbers from \cite{golbeck_trust_2003}
+
+``The pervasive use of digest values to identify the statements in the Semantic Web will engender a preponderance of evidence for trust without cryptography.''
+
+Declares that highly inter-related values are trust-able, does not note however that it is vulnerable to Sybil\cite{douceur_sybil_2002}
+\cite{reagle_key_2002}
+
+Web of trust ontology can be used to serialize the PGP WOT
+\cite{_web_2004}
 
 \section{Existing Trust Systems}
 GPG WOT
-Bitcoin
+Bitcoin is syntacticly similar to trust based systems such as the PGP WOT, the subtle difference 
 
 \section{Adding Semantic Web}
 Semantic Web Trust Ontologies/ Network types
@@ -144,6 +188,7 @@ The author would like to thank Dr Nicholas Gibbins for suggesting a title and pr
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
 \bibliography{i-d,rfc,sigproc,semweb}  % sigproc.bib is the name of the Bibliography in this case
+
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex
