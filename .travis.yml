@@ -12,3 +12,35 @@ script:
 after_success:
 - if [ "$DROPBOX_UPLOADER" ]; then bash dropbox_uploader.sh upload semweb.pdf; fi
 - if [ "$DROPBOX_UPLOADER" ]; then bash dropbox_uploader.sh share semweb.pdf; fi
+env:
+  global:
+  - secure: ! 'kXat21Mni77R9GSSdDny6K6VZK//mhs3isZMTX7mjgp1dHNODlTxqFGoT9Jn
+
+      Cfq62C7TP8hTP+lc2qjEzlnQ8+Hp7eIIK5ZCG/5f4kknr5aTmjqtzvezhGY9
+
+      qJSbwUHonD7+4Szi5I8HiPnQqOWKy1BItNpn6PP0EgI1s88BoC4='
+  - secure: ! 'B+izCHX/Enx8MbDFlZF4kZtYYRxnBXfHgACvXhKSXsuG9JQkkLudCxbDL89u
+
+      eD9OsuuC5sdDzGK3LtHZHtTLPXCUnvRJRZ9OLYtoloY/FTfRGAHm3eSDgY/A
+
+      Cckrm5srwvIjHoDU5hUiCobtaUZcqv0qWSS8Sd9OMWotG65fDnc='
+  - secure: ! 'BtL3PiYmXPggbNE//x9w3lUOWgGMYK9/sLje+yT7B+dukC8LOtExtk1qKhvq
+
+      j4YD0cNxbxlDSDXS9HHP6JopSUgDFnc/8dxvtnshXPszWoRiT2sWpCtneHpV
+
+      ePg5jWQBZlcut5EO7jpIJxcd8fvHDNVqGZ6OjxlPJCk0wJn+DK0='
+  - secure: ! 'didVYJRR0+NwOHjrBZqeaFP6wm2IlLdMMwqFff/pmhS8lrMhwiOTgqKCND2y
+
+      4yakJ3YHEu82ssrlCSLk5h7Jn/sfVNYf6LSp2oXih5Q84ALGFQSRYJrzI5Fs
+
+      f6vp59s/XfyihU2KnmJfDzcdx/J11VzG4q5YvC0414GfGlZ7tgQ='
+  - secure: ! 'S2YLQ5Fa+Zvf39Nq1iPZEcBOtw+pTfkjUtP4vFwVrerQ+btRHmo0nEVDas7z
+
+      UUHk288VRs0D8SXVmCjaA5ltPlpugDa9k60CS0UpRzZCyXnz8e38VYpmbj1O
+
+      JC1/FMcM1HQ66JCIe1kL7orTVmPNcDezRimuzbC8JuaXbNd2SWU='
+  - secure: ! 'fvLxTcuRo1XMKSZ98EzS93OA+BvZhaJLxfJWkO006Cb/L52GvYVTpEerwmkX
+
+      5tJkfzvIKs5Gmu+LuzIPxHQCjn0MiCIBU6p6QF5XdG7v48zluCffreCiJJD7
+
+      KLCJXugRGuh0xt5ap65b8itdSgWOj0lO9f0q5a9Nd7JOR5qu7+w='
