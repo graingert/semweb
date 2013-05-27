@@ -99,13 +99,9 @@ TODO: Abstract
 \keywords{\semkeywords} % NOT required for Proceedings
 
 \section{Introduction}
-The OED defines `trust' as ``confidence in or reliance on some quality or attribute of a person or thing, or the truth of a statement''.  However, within the context of technology literature this word has taken on a domain specific definition.  O'Hara  et al~\cite{ohara_trust_2004} describe trust as ``a method of dealing  with uncertainty'' specifically with regards to the actions an agent may take. Similarly, though more generally,  Golbeck et al~\cite{golbeck_trust_2003} describes trust  in terms of users and the statements they make.  Kalfoglou et al note that agents could refer to something as simple as distributed objects or as complex as autonomous entities~\cite{kalfoglou_emergent_2004}.
+The OED defines `trust' as ``confidence in or reliance on some quality or attribute of a person or thing, or the truth of a statement''.  However, within the context of technology literature this word has taken on a domain specific definition.  O'Hara  et al~\cite{ohara_trust_2004} describe trust as ``a method of dealing with uncertainty'' specifically with regards to the actions an agent may take. Similarly, though more generally,  Golbeck et al~\cite{golbeck_trust_2003} describes trust in terms of users and the statements they make.  Kalfoglou et al note that agents could refer to something as simple as distributed objects or as complex as autonomous entities~\cite{kalfoglou_emergent_2004}.
 
-
-Trust is an integral issue within Semantic Web as anyone, or more specifically any agent, can make assertions about any object with a valid URI and each of these assertions are considered with equivalent certainty.  While this makes merging datasets trivial within the Semantic Web\cite{golbeck_trust_2003}, this is not a desirable mode of operation for collaboration, automatic discovery or composition of agents and services\footnote{A self-declared unreliable information source: \url{http://data.totl.net/steve.rdf}}.
-
-
-TODO: THUS.... general point to be made in the paper.
+Trust is an integral issue within Semantic Web as anyone, or more specifically any agent, can make assertions about any object with a valid URI and each of these assertions are considered with equivalent certainty.  While this makes merging datasets trivial within the Semantic Web\cite{golbeck_trust_2003}, this is not a desirable mode of operation for collaboration, automatic discovery or composition of agents and services\footnote{A self-declared unreliable information source: \url{http://data.totl.net/steve.rdf}}. As such a purely Semantic Web approach to this problem is not fit for purpose and could benefit from an amalgamation of trust systems in use before the Semantic Web was developed.  This could lead to an enhanced system of trust which is better able to handle a secure, distributed Semantic Web trust network.
 
 \section{Trust Systems without the Semantic Web}
 The PGP Web of Trust (WOT)\cite{_how_pgp_1999} splits it's trust model into two distinct attributes, `validity' and `trust'.   Validity is confidence that a particular public key belongs to its purported owner, other users can vouch for the validity of this public key however this requires trusting said people's endorsement - this is where the second metric is required.  Trust is the confidence one has in the judgement of the users who are asserting the validity of the particular public key.  A user's determination of the validity of a particular key can come from a direct determination of validity or via the transitive assertions of trusted users i.e. user A trusts user B who trusts user C then user A transitively trusts user C.
@@ -116,7 +112,7 @@ The PGP WOT is implemented using a graph of weighted edges between public keys, 
 
 While this trust operates through public key cryptography, the semantics of the network are extremely important. For example, Bitcoin is syntactically similar to the PGP WOT - a graph of signatures with signed messages representing weighted edges, however the semantics of the system is significantly different\cite{bitcoin}. Within the Bitcoin protocol, each node of the graph (a public key) is limited to having the same total weight of outgoing edges as incoming edges so that the system can represent value transfer instead of trust this is in comparison to PGP WOT in which users are free to make whatever statement, regarding trust connections, they wish.
 
-\section{Adding Semantic Web}
+\section{Semantic Web Trust Systems}
 O'Hara et al~\cite{ohara_trust_2004} define five basic trust derivation strategies based on optimism, pessimism, centralisation, investigation and transitivity.  Optimistic trust derivation assumes that all agents are trustworthy until proven otherwise, pessimism is the reflection of this; requiring proof of trustworthiness as all agents are considered untrustworthy until proven otherwise an example of this is the first stage of the PGP web of trust: the manual validation of individual users.  Centralised trust systems rely on a single institution defining the trust of other agents and example of this the WebTrust system~\cite{golbeck_trust_2003} or x.509 certificate authorities (CAs).  Investigation as a trust derivation strategy involves a Bayesian network based trust model, in which agents gradually reveal information to each other until trust is established.  Finally transitivity which involves and requires a network of agents describing mutual trust, this is similar to the social network trust methods used within the PGP WOT.
 
 These strategies are useful within particular situations and confer specific sets of advantages and disadvantages and can, to an extent, be combined e.g. a centralized service which utilises a transitive trust algorithm.  An example of this would be Golbeck's TrustMail service which utilises a centralized trust system that determines a transitive trust value from a graph of social network data which can then be queried by independent agents.  The algorithm below, as described by Golbeck and used by the TrustMail service, determines a calculated trust $t$ from node $i$ to node $n$ using equation~\ref{eq:golbeck}:
@@ -128,10 +124,9 @@ t_{is}=\frac{\sum_{j=0}^{n}{\begin{cases}
 \end{cases}}}{\sum_{j=0}^{n}{t_{ij}}}
 \end{equation}
 
-where $i$ has $n$ neighbors with paths to $s$.
+where $i$ has $n$ neighbours with paths to $s$.
 
-As stated before, these strategies are chosen based on various cost definitions ``The main point of a trust strategy is to provide a way to operate under uncertainty'': Operational costs, Opportunity cost, Deficiency cost, Service charges. The choice of trust strategy depends on the cost of failure (could lead to a catastrophe) and risks.  Risk/Cost/Benifit analysis.
-
+As stated before, these strategies are chosen based on various cost definitions.  According to the O'Hara~\cite{ohara_trust_2004} definition, the principle function of trust strategies is to provide a way of operating under uncertainty.   Operational costs, Opportunity cost, Deficiency cost, Service charges. The choice of trust strategy depends on the cost of failure (could lead to a catastrophe) and risks.  Risk/Cost/Benifit analysis.
 
 Independent agents and providers of knowledge. These same trust trust algorithms can be described semantically for service oriented systems using the ``Trust Service Ontology'' described by Sherchan et al~\cite{sherchan_trust_2010}. The Trust Service Ontology allows trust composition and trust propagation and semantically describes different types of trust: ``proposed approach differentiates and explicitly
 defines the relationship between trust concepts and ... trust algorithms''
@@ -139,6 +134,11 @@ defines the relationship between trust concepts and ... trust algorithms''
 The classes of trust defined are: Bootstrapped Trust, GlobalTrust, PersonalisedTrust, DirectTrust, PropagtedTrust and CompositeTrust.
 
 WebID uses HTTPS or secure HTTP to give validity to certificates contained in FOAF RDF documents.
+
+``The pervasive use of  digest values to identify the statements in the Semantic Web will  engender a preponderance of evidence for trust without cryptography.''
+
+Declares that highly inter-related values are trust-able, does not note however  that it is vulnerable to Sybil\cite{douceur_sybil_2002}
+\cite{reagle_key_2002}
 
 \subsection{A Comparison of Vocabularies}
 WOT/RDF
@@ -160,23 +160,18 @@ defines a trust ontology with 9 levels of trust.
 
 N-Ary relationship pattern to add ``TrustsRe'' links, can trust a person ``trustsPerson'' on a particular subject ``trustsOnSubject''
 
-TrustMail queries web service 
-\cite{golbeck_trust_2003}
-
 A concrete ontology for trust, with the same intention as discussed in the paper.
 \cite{jennifer_golbeck_trust_2013}
-
-``The pervasive use of digest values to identify the statements in the Semantic Web will engender a preponderance of evidence for trust without cryptography.''
-
-Declares that highly inter-related values are trust-able, does not note however that it is vulnerable to Sybil\cite{douceur_sybil_2002}
-\cite{reagle_key_2002}
 
 Web of trust ontology can be used to serialize the PGP WOT
 \cite{_web_2004}
 
 \section{Conclusions and Future Work}
-We worked hard, but discovered very little.
 %\end{document}  % This is where a 'short' article might terminate
+
+To show that a purely semantic web solution to the problem of trust is not as useful as a combination of both.  Using an RDF serialization of the PGP WOT graph and various semantic web ontologies and trust algorithms to build a more versatile system allowing agents to take advantage of the PGP WOT graph as part of their automatic discovery and composition of services and other agents.
+
+Potential directions for future research and development could be to create an ontology of linking terms in the RDF PGP WOT graph with the mind-swap trust ontology\cite{jennifer_golbeck_trust_2013} and to investigate the possible enhancements this would allow for TrustMail, GPGMail and other application that depend on either semantic web or PGP trust systems.
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
