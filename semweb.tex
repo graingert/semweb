@@ -126,45 +126,19 @@ t_{is}=\frac{\sum_{j=0}^{n}{\begin{cases}
 
 where $i$ has $n$ neighbours with paths to $s$.
 
-As stated before, these strategies are chosen based on various cost definitions.  According to the O'Hara~\cite{ohara_trust_2004} definition, the principle function of trust strategies is to provide a way of operating under uncertainty.   Operational costs, Opportunity cost, Deficiency cost, Service charges. The choice of trust strategy depends on the cost of failure (could lead to a catastrophe) and risks.  Risk/Cost/Benifit analysis.
+As stated before, these strategies are chosen based on various cost definitions.  According to the O'Hara~\cite{ohara_trust_2004} definition, the principle function of trust strategies is to provide a way of operating under uncertainty.   The choice of trust strategy depends on the cost of failure (could lead to a catastrophe) and risks.  Costs of failure can include: operational costs, opportunity costs, deficiency costs and Service charges.   Thus a Risk/Cost/Benefit analysis needs to be performed in order to find an optimum strategy.
 
-Independent agents and providers of knowledge. These same trust trust algorithms can be described semantically for service oriented systems using the ``Trust Service Ontology'' described by Sherchan et al~\cite{sherchan_trust_2010}. The Trust Service Ontology allows trust composition and trust propagation and semantically describes different types of trust: ``proposed approach differentiates and explicitly
-defines the relationship between trust concepts and ... trust algorithms''
-
-The classes of trust defined are: Bootstrapped Trust, GlobalTrust, PersonalisedTrust, DirectTrust, PropagtedTrust and CompositeTrust.
-
-WebID uses HTTPS or secure HTTP to give validity to certificates contained in FOAF RDF documents.
-
-``The pervasive use of  digest values to identify the statements in the Semantic Web will  engender a preponderance of evidence for trust without cryptography.''
-
-Declares that highly inter-related values are trust-able, does not note however  that it is vulnerable to Sybil\cite{douceur_sybil_2002}
-\cite{reagle_key_2002}
+Reagle states that ``highly interrelated values are trustable'', an example given is that if an agent wishes to validate another agent's key that agent can query the Semantic Web for data relating the key to the agent.  If enough disparate systems declare a particular statement it can be assumed to be true~\cite{reagle_key_2002}. Unfortunately, the report misses a few security considerations for example: a malicious agent could control the network link to the web resulting in blah; similarly, the ability to trust quality ratings of services that one uses to access quality ratings e.g. home internet service provider (ISP) ratings viewed while using a particular ISP's network.   Crucially, it would be possible for a particularly determined adversary to dissemate sufficient false information using multiple services such that legitimate information would be outweighed allowing the true value to be concealed i.e. Sybil\cite{douceur_sybil_2002} attacks.  This has been shown to work in practise using a technique known as Google bombing in which several high profile politicians including President Bush, Senator Clinton and Senator Rick Santorum were linked with ``various unprintable phrases''\cite{yourmessagehere}.
 
 \subsection{A Comparison of Vocabularies}
-WOT/RDF
-Key Free Trust
+Golbeck~\cite{golbeck} also notes that hyperlinked pages could be used as a trust network, and agrees that the Sematic Web is better because the Semantic Web  allows concept relationships to be marked up with, no need to use heuristics. In social web, Erdos or Bacon number can be used to determine potential trust between friends, however users of FOAF are unlikey to expect that the declartion of knowledge will also bestow some level of trust. As such Golbeck has also published a concrete ontology derrived from concepts in the paper~\cite{jennifer_golbeck_trust_2013}. The N-Ary relation ontology design pattern allows a person to trust another person ``trustsPerson'' on a particular subject ``trustsOnSubject''.
 
-``For example, just because a person can confirm the source of documents does not license them to trust the content of those documents. Indeed, confirmation that some documents are the work of a noted forger gives strong support to distrusting their content. This project addresses ``trust'' as credibility or reliability in a much more human''
+Web of trust ontology can be used to describe messages from the PGP network\cite{_web_2004} using concepts such as RDF descritions of public keys and signed assurances.  Idealy an ontology could be produced to link the PGP WOT graph with the Trust Ontology, allowing the PGP web of trust to be re-searialized as RDF and reasoned over using the existing trust algortihms.
 
-About users
-Confidence of the author is important
-Social network analysis
+A potential basis for this ontology exists in the ``Trust Service Ontology'' described  by Sherchan et al~\cite{sherchan_trust_2010} for semantically marking up . The Trust Service Ontology  allows trust composition and trust propagation and semantically describes different types of trust: ``proposed approach differentiates  and explicitly
+defines the relationship between trust concepts and ... trust algorithms''
 
-``TRELLIS is an interactive tool that helps users annotate the
-rationale for their decisions, hypotheses, and opinions as they analyze information from various sources''\cite{gil_trusting_2002}
-
-Hyperlinked pages could be used as a trust network, SW is better because the SW allows concept relationships to be marked up, no need to use heuristics
-In social web, Erdos or Bacon number can be used to determine potential trust between friends.
-foaf:knows should not be used to give trust, as that's semantically incorrect
-defines a trust ontology with 9 levels of trust.
-
-N-Ary relationship pattern to add ``TrustsRe'' links, can trust a person ``trustsPerson'' on a particular subject ``trustsOnSubject''
-
-A concrete ontology for trust, with the same intention as discussed in the paper.
-\cite{jennifer_golbeck_trust_2013}
-
-Web of trust ontology can be used to serialize the PGP WOT
-\cite{_web_2004}
+The  classes of trust defined are: Bootstrapped Trust, GlobalTrust,  PersonalisedTrust, DirectTrust, PropagtedTrust and CompositeTrust.
 
 \section{Conclusions and Future Work}
 %\end{document}  % This is where a 'short' article might terminate
